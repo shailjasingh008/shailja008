@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Fira Sans', sans-serif;
+  background: linear-gradient(130deg, #2ab26f 0%, #0084ba 100%);
+}
+.blog-card{
+  position: absolute;
+  height: 340px;
+  width: 95%;
+  max-width:850px;
+  margin: auto;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0px 10px 50px rgba(252,56,56,.3);
+}
+.inner-part{
+  position: absolute;
+  display: flex;
+  height: 360px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+}
+
+#tap-1:checked ~ .inner-part .img-1,
+#tap-2:checked ~ .inner-part .img-2,
+#tap-3:checked ~ .inner-part .img-3{
+  opacity: 1;
+  transition-delay: .2s;
+}
+.content{
+  padding: 0 20px 0 35px;
+  width: auto;
+  margin-left: 50px;
+  opacity: 0;
+  transition: .6s;
+}
+#imgTap:checked ~ .inner-part .content{
+  display: none;
+}
+#tap-1:checked ~ .inner-part .content-1,
+#tap-2:checked ~ .inner-part .content-2,
+#tap-3:checked ~ .inner-part .content-3,
+#tap-4:checked ~ .inner-part .content-4{
+  opacity: 1;
+  margin-left: 0px;
+
+  transition-delay: .3s;
+}
+.content span{
+  display: block;
+  font-size: 25px;
+  font-weight: 700;
+  color: #2ab26f;
+  margin-bottom: 20px;
+}
+.content .title{
+    color: #0d0925;
+    margin-bottom: 5px;
+    font-size: 19px;
+    font-weight: 700;
+    margin-top: 15px;
+  
+}
+.content .text{
+  color: #4e4a67;
+  font-size: 13px;
+  margin-bottom: 10px;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.content button{
+  display: inline-flex;
+  padding: 10px 15px;
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff0e6;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #2ab26f;
+  background: linear-gradient(130deg, #2ab26f 0%, #0084ba 100%);
+}
+.content button:hover{
+    background: linear-gradient(130deg, #2ab26f 0%, #0084ba 100%);
+}
+.sliders{
+  position: absolute;
+  bottom: 25px;
+  left: 85%;
+  transform: translateX(-10%);
+  z-index: 12;
+}
+#imgTap:checked ~ .sliders{
+  display: none;
+}
+.sliders .tap{
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background: #d9d9d9;
+  border-radius: 5px;
+  display: inline-flex;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.sliders .tap:hover{
+  background: #cccccc;
+}
+.sliders .tap:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: -100%;
+  background: linear-gradient(130deg, #2ab26f 0%, #0084ba 100%);
+  border-radius: 10px;
+  transform: scaleX(0);
+  transition: transform .6s;
+  transform-origin: left;
+}
+input[type="radio"],
+input[type="checkbox"]{
+  display: none;
+}
+#tap-1:checked ~ .sliders .tap-1:before,
+#tap-2:checked ~ .sliders .tap-2:before,
+#tap-3:checked ~ .sliders .tap-3:before,
+#tap-4:checked ~ .sliders .tap-4:before{
+  transform: scaleX(1);
+  width: 100%;
+}
+
+label{
+  position: relative;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}
